@@ -3,11 +3,13 @@ package com.doublefs.common.javatemplate;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author liuqingliang
+ */
 @SpringBootApplication
-public class JavaTemplateApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(JavaTemplateApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
-
 }
