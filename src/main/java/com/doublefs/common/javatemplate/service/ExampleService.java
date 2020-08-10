@@ -1,5 +1,6 @@
 package com.doublefs.common.javatemplate.service;
 
+import com.doublefs.common.javatemplate.vo.TestResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -13,15 +14,19 @@ import java.util.List;
 @Service
 public class ExampleService {
 
+//    @Autowired
+//    FeedConfigMapper feedConfigMapper;
+
     private final static Logger logger = LoggerFactory.getLogger(ExampleService.class);
 
-    public List<String> test() {
+    public TestResult test() {
         String txt = "insert";
         logger.info("[example] I'm info, {}", txt);
         logger.error("[example] I'm error, {}", txt);
 
-        List<String> resp = new ArrayList<>();
-        resp.add(txt);
+        TestResult resp = new TestResult();
+        resp.setFit(true);
+        resp.setValue(txt.length());
         return resp;
     }
 }

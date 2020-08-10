@@ -14,8 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class BaseController {
 
-    @Autowired
+    final
     ExampleService exampleService;
+
+    public BaseController(ExampleService exampleService) {
+        this.exampleService = exampleService;
+    }
 
     @RequestMapping(value = "/healthCheck", method = RequestMethod.GET)
     public JsonResult healthCheck() {
