@@ -1,12 +1,14 @@
 package com.doublefs.common.javatemplate.service;
 
+import com.doublefs.common.javatemplate.dao.FeedConfigDao;
+import com.doublefs.common.javatemplate.dao.FeedConfigMapper;
+import com.doublefs.common.javatemplate.model.FeedConfig;
 import com.doublefs.common.javatemplate.vo.TestResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author liuqingliang
@@ -14,8 +16,11 @@ import java.util.List;
 @Service
 public class ExampleService {
 
-//    @Autowired
-//    FeedConfigMapper feedConfigMapper;
+    @Autowired
+    FeedConfigDao feedConfigDao;
+
+    @Autowired
+    FeedConfigMapper feedConfigMapper;
 
     private final static Logger logger = LoggerFactory.getLogger(ExampleService.class);
 
@@ -27,6 +32,9 @@ public class ExampleService {
         TestResult resp = new TestResult();
         resp.setFit(true);
         resp.setValue(txt.length());
+        resp.setData(feedConfigDao.getTest());
+//        resp.setData(feedConfigMapper.selectAll());
+
         return resp;
     }
 }

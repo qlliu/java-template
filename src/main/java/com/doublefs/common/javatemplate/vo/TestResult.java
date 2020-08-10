@@ -6,6 +6,7 @@ package com.doublefs.common.javatemplate.vo;
 public class TestResult {
     int value;
     boolean fit;
+    Object data;
 
     public int getValue() {
         return value;
@@ -21,5 +22,13 @@ public class TestResult {
 
     public void setFit(boolean fit) {
         this.fit = fit;
+    }
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
     }
 }
