@@ -18,6 +18,13 @@ public class SentryExample {
 
         SentryExample myClass = new SentryExample();
         myClass.logWithStaticApi();
+
+        try {
+            // just for test when aync processing.
+            Thread.sleep(1000);
+        } catch (Exception e){
+            System.out.println("what??");
+        }
     }
 
     /**
