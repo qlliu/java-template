@@ -1,8 +1,6 @@
 package com.doublefs.common.javatemplate.example;
 
 import io.sentry.Sentry;
-import io.sentry.SentryClient;
-import io.sentry.SentryClientFactory;
 import io.sentry.event.BreadcrumbBuilder;
 import io.sentry.event.UserBuilder;
 
@@ -12,14 +10,11 @@ import io.sentry.event.UserBuilder;
  */
 public class SentryExample {
 
-    private static SentryClient sentry;
-
     public static void main(String[] args) {
         // usage detail: http://sentry.intra.doublefs.com/dfs/xcrawler/getting-started/java/
         System.out.println("Here is Sentry example");
         // just need to init once. This's XCrawler project's dsn code.
         Sentry.init("http://92b3dd446317422596df80d39e99491e@sentry.intra.doublefs.com/5");
-        sentry = SentryClientFactory.sentryClient();
 
         SentryExample myClass = new SentryExample();
         myClass.logWithStaticApi();
